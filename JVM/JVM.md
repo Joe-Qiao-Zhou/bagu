@@ -63,8 +63,7 @@
 - 用来存储加载的类信息、常量、静态变量、JIT编译后的代码等
 - 方法区是【概念】，HotSpot使用Java堆的永久代实现，因此也可进行GC（针对常量池的回收和类型的卸载）
 - 通过`-XX:MaxMetaspaceSize/MaxPermSize=`设置大小
-- ，1.7之前通过【永久代】实现，其中包括【CLass、ClassLoader和常量池】
-  - 1.7后通过【元空间】实现，存储的内容相同（常量池中的StringTable存在heap中），但不占用JVM内存，而使用【本地内存】
+- 1.7之前通过【永久代】实现，其中包括【CLass、ClassLoader和常量池】，1.7后通过【元空间】实现，存储的内容相同（常量池中的StringTable存在heap中），但不占用JVM内存，而使用【本地内存】
 - 出现场景：Spring和MyBatis的cglib动态类加载
 
 ### 常量池
